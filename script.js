@@ -1,4 +1,7 @@
 function gerarPDF() {
+  // Acesso ao jsPDF
+  const { jsPDF } = window.jspdf;
+
   // Obter dados do formulário
   const nomeResponsavel = document.getElementById('nomeResponsavel').value;
   const idade = document.getElementById('idade').value;
@@ -26,51 +29,42 @@ function gerarPDF() {
   const pdf = new jsPDF();
 
   // Definir tamanho da fonte
-  pdf.setFontSize(15); // Ajuste o valor conforme necessário
+  pdf.setFontSize(15);
 
   // Adicionar logo ou imagem ao PDF
   const logoImg = new Image();
-  logoImg.src = 'img/pascoalogo.png'; // Substitua com o caminho para sua imagem
-  pdf.addImage(logoImg, 'PNG', 10, 15, 60, 40); // Parâmetros
+  logoImg.src = 'img/pascoalogo.png'; // Certifique-se de que o caminho está correto
+  pdf.addImage(logoImg, 'PNG', 10, 15, 60, 40);
 
   const presentImg = new Image();
-  presentImg.src = 'img/uniasselvi.png';
-  pdf.addImage(presentImg, 'PNG', 135, 10, 60, 40); // Parâmetros
+  presentImg.src = 'img/ovosdapascoa.png';
+  pdf.addImage(presentImg, 'PNG', 135, 10, 60, 40);
 
   const UniasselvitImg = new Image();
   UniasselvitImg.src = 'img/uniasselvi.png';
-  pdf.addImage(UniasselvitImg, 'PNG', 85, 20, 30, 20); // Parâmetros
-  pdf.addImage(UniasselvitImg, 'PNG', 85, 255, 30, 20); // Parâmetros
+  pdf.addImage(UniasselvitImg, 'PNG', 85, 20, 30, 20);
+  pdf.addImage(UniasselvitImg, 'PNG', 85, 255, 30, 20);
 
-  const enfeitesImg = new Image();
-  enfeitesImg.src = 'img/bgpascoa.png';
-  pdf.addImage(enfeitesImg, 'PNG', -5, -5, 50, 60); // Parâmetros
+  const felizpascoaImg = new Image();
+  felizpascoaImg.src = 'img/felizpascoa.png';
+  pdf.addImage(felizpascoaImg, 'PNG', 5, 240, 60, 60);
 
-  const arvoreImg = new Image();
-  arvoreImg.src = 'img/bgdapascoa.png';
-  pdf.addImage(arvoreImg, 'PNG', 140, 210, 70, 90); // Parâmetros
-
-  const feliznatalImg = new Image();
-  feliznatalImg.src = 'img/felizpascoa.png';
-  pdf.addImage(feliznatalImg, 'PNG', 5, 240, 60, 60); // Parâmetros
-
-  // retangulos criados
+  // Adicionar retângulos no layout
   pdf.rect(5, 62, 200, 20); // Retângulo para "Responsável"
-  pdf.rect(5, 82, 200, 10); // Retângulo para "Responsável"
-  pdf.rect(5, 92, 200, 10); // Retângulo para "Responsável"
-  pdf.rect(5, 102, 200, 10); // Retângulo para "Responsável"
-  pdf.rect(5, 112, 200, 10); // Retângulo para "Responsável"
+  pdf.rect(5, 82, 200, 10);
+  pdf.rect(5, 92, 200, 10);
+  pdf.rect(5, 102, 200, 10);
+  pdf.rect(5, 112, 200, 10);
 
   pdf.rect(5, 132, 200, 20); // Retângulo para "Criança"
-  pdf.rect(5, 152, 200, 10); // Retângulo para "Criança"
-  pdf.rect(5, 162, 200, 10); // Retângulo para "Criança"
-  pdf.rect(5, 172, 200, 10); // Retângulo para "Criança"
-  pdf.rect(5, 182, 200, 10); // Retângulo para "Criança"
-  pdf.rect(5, 192, 200, 10); // Retângulo para "Criança"
-  pdf.rect(5, 202, 200, 10); // Retângulo para "Criança"
+  pdf.rect(5, 152, 200, 10);
+  pdf.rect(5, 162, 200, 10);
+  pdf.rect(5, 172, 200, 10);
+  pdf.rect(5, 182, 200, 10);
+  pdf.rect(5, 192, 200, 10);
+  pdf.rect(5, 202, 200, 10);
 
   // Adicionar conteúdo ao PDF
-  //cliente
   pdf.text(`Folha de Cadastro`, 80, 60);
   pdf.text(`Informações sobre O responsável :`, 6, 70);
   pdf.text(`Nome do Responsável : ${nomeResponsavel}`, 6, 90);
@@ -105,6 +99,6 @@ function gerarPDF() {
   pdf.text(`Sexo: ${sexoCrianca5}`, 116, 210);
   pdf.text(`Idade: ${idadeCrianca5}`, 166, 210);
 
-  // Salvar o PDF ou exibir no navegador
+  // Salvar o PDF
   pdf.save('CadastroPascoaSolidaria.pdf');
 }
