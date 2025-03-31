@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <title>Natal Solidário Uniasselvi</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="img/felizpascoa.png" type="image/x-icon" />
+    <!-- Adicione o link para a biblioteca jsPDF -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"
+      integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="form-container">
+      <div class="form">
+        <div class="logoApp">
+          <img src="img/pascoalogo.png" alt="" />
+          <img src="img/uniasselvi.png" alt="" />
+        </div>
+        <input
+          placeholder="Nome do Responsável: "
+          type="text"
+          id="nomeResponsavel"
+          class="input"
+        />
+        <input placeholder="idade:" type="text" id="idade" class="input" />
+        <input placeholder="telefone:" type="text" id="phone" class="input" />
+        <input
+          placeholder="endereço:"
+          type="text"
+          id="endereco"
+          class="input"
+        />
+        <input
+          placeholder="quantidade de crianças no endereço:"
+          type="number"
+          id="quantidadeCriancas"
+          class="input"
+        />
+        <div class="child-info">
+          <input
+            placeholder="Nome da Criança: "
+            type="text"
+            class="input Ncrianca"
+            id="nomeCrianca1"
+          />
+          <select class="input sexoCrianca" id="sexoCrianca1">
+            <option value="" disabled selected>Sexo :</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+          </select>
+          <input
+            placeholder="Idade: "
+            type="number"
+            class="input idadeCrianca"
+            id="idadeCrianca1"
+          />
+        </div>
+        <div class="child-info">
+          <input
+            placeholder="Nome da Criança: "
+            type="text"
+            class="input Ncrianca"
+            id="nomeCrianca2"
+          />
+          <select class="input sexoCrianca" id="sexoCrianca2">
+            <option value="" disabled selected>Sexo :</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+          </select>
+
+          <input
+            placeholder="Idade: "
+            type="number"
+            class="input idadeCrianca"
+            id="idadeCrianca2"
+          />
+        </div>
+        <div class="child-info">
+          <input
+            placeholder="Nome da Criança: "
+            type="text"
+            class="input Ncrianca"
+            id="nomeCrianca3"
+          />
+          <select class="input sexoCrianca" id="sexoCrianca3">
+            <option value="" disabled selected>Sexo :</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+          </select>
+
+          <input
+            placeholder="Idade: "
+            type="number"
+            class="input idadeCrianca"
+            id="idadeCrianca3"
+          />
+        </div>
+        <div class="child-info">
+          <input
+            placeholder="Nome da Criança: "
+            type="text"
+            class="input Ncrianca"
+            id="nomeCrianca4"
+          />
+          <select class="input sexoCrianca" id="sexoCrianca4">
+            <option value="" disabled selected>Sexo :</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+          </select>
+          <input
+            placeholder="Idade: "
+            type="number"
+            class="input idadeCrianca"
+            id="idadeCrianca4"
+          />
+        </div>
+        <div class="child-info">
+          <input
+            placeholder="Nome da Criança: "
+            type="text"
+            class="input Ncrianca"
+            id="nomeCrianca5"
+          />
+          <select class="input sexoCrianca" id="sexoCrianca5">
+            <option value="" disabled selected>Sexo :</option>
+            <option value="MasculinoM">Masculino</option>
+            <option value="Feminino">Feminino</option>
+          </select>
+          <input
+            placeholder="Idade: "
+            type="number"
+            class="input idadeCrianca"
+            id="idadeCrianca5"
+          />
+        </div>
+        <div class="button-container">
+          <button class="send-button" onclick="gerarPDF()">Gerar PDF</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
